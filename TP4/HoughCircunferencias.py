@@ -38,7 +38,7 @@ def draw_circulos(imagen, circulos, radio_minimo):
         cv2.circle(imagen, (xc, yc), radio, (0, 0, 255), 2)
 
 # Cargar la imagenn en escala de grises
-imagen = cv2.imread('imagen.jpg', 0)
+imagen = cv2.imread('C:/***/imagen.jpg', 0)
 
 # Aplicar el detector de bordes (opcional)
 bordes = cv2.Canny(imagen, 50, 150)

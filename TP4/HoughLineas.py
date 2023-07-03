@@ -2,17 +2,17 @@ import numpy as np
 import math, cv2
 
 def transf_hough_lineas(imagen, umbral):
-    # Dimensiones de la imagenn
+    # Dimensiones de la imagen
     alto, ancho = imagen.shape
 
     # Rango de valores de ρ y θ
     max_rho = int(math.hypot(alto, ancho))
     max_theta = 180
 
-    # Matriz de votación
+    # Matriz de acumulación
     acumulador = np.zeros((max_rho, max_theta))
 
-    # Obtener los puntos de borde en la imagenn
+    # Obtener los puntos de borde en la imagen
     puntos_borde = np.argwhere(imagen > 0)
 
     # Calcular la transformada de Hough
@@ -38,8 +38,8 @@ def draw_lineas(imagen, lineas):
         y2 = int(y0 - 1000 * (a))
         cv2.line(imagen, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
-# Cargar la imagenn en escala de grises
-imagen = cv2.imread('imagen.jpg', 0)
+# Cargar la imagen en escala de grises
+imagen = cv2.imread('C:/***/imagen.jpg', 0)
 
 # Aplicar el detector de bordes (opcional)
 bordes = cv2.Canny(imagen, 50, 150)
